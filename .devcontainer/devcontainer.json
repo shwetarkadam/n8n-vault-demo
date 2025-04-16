@@ -1,0 +1,21 @@
+{
+  "name": "n8n‑vault",
+  // expose Vault (8200) and n8n (5678) to the browser
+  "forwardPorts": [8200, 5678],
+
+  // run both services as soon as the Codespace starts
+  "postStartCommand": "vault server -dev -dev-root-token-id=root & n8n start --tunnel",
+
+  // VS Code tweaks (optional)
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "hashicorp.terraform",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
